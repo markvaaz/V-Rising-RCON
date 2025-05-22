@@ -1,0 +1,39 @@
+{
+  "name": "v-rising-rcon",
+  "version": "1.0.0",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "compile": "tsc",
+    "watch": "tsc -w"
+  },
+  "keywords": [],
+  "author": "markvaaz",
+  "license": "AGPL-3.0-only",
+  "description": "RCON client for managing V Rising servers with ScarletRCON mods.",
+  "devDependencies": {
+    "@types/node": "^22.15.18",
+    "electron": "^36.2.1",
+    "typescript": "^5.8.3",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.scarletrconclient.markvaaz",
+    "productName": "Scarlet RCON Client",
+    "directories": {
+      "buildResources": "build"
+    },
+    "win": {
+      "icon": "build/win/icon.ico",
+      "target": "portable"
+    },
+    "mac": {
+      "icon": "build/mac/icon.icns"
+    },
+    "linux": {
+      "icon": "build/png/512x512.png"
+    }
+  },
+  "type": "module"
+}

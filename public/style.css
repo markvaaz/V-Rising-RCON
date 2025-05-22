@@ -1,0 +1,191 @@
+* {
+  box-sizing: border-box;
+  transition-duration: 200ms;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: black;
+  color: #fff;
+  display: grid;
+  grid-template-rows: auto 60px;
+  height: 100vh;
+  margin: 0;
+}
+
+pre {
+  background: black;
+  padding: 10px;
+  overflow: auto;
+  margin: 0;
+  font-size: 1.2em;
+  font-family: monospace sans-serif;
+  line-height: 1.2em;
+}
+
+pre span {
+  white-space: pre-wrap;
+  margin: 3px 0;
+}
+
+pre span.animated {
+  opacity: 0;
+  animation: fadein 150ms forwards;
+}
+
+pre span.command {
+  margin: 8px 0;
+  line-height: 2em;
+  padding: 4px;
+  background: white;
+  color: black;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.output-area {
+  display: grid;
+  grid-template-rows: 70px calc(100vh - 70px - 90px);
+  padding: 10px;
+  font-family: monospace;
+  font-size: 15px;
+  background-color: #000;
+  gap: 10px;
+}
+
+.input-area {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 20px;
+  padding: 20px 10px;
+  font-family: monospace;
+  font-size: 15px;
+  background-color: #000;
+  gap: 10px;
+  align-items: center;
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 1);
+  z-index: 1;
+}
+
+.input-area label {
+  background-color: #fff;
+  color: #000;
+  font-size: 15px;
+  border-radius: 5px;
+  user-select: none;
+  cursor: text;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  align-items: center;
+}
+
+.input-area label span {
+  padding: 10px 10px 10px 10px;
+  border-right: 1px solid #eee;
+}
+
+.input-area input {
+  all: unset;
+  margin: 0;
+  padding: 10px;
+  border: none;
+  height: 100%;
+  background-color: transparent;
+  color: #000;
+  border-radius: 5px;
+}
+
+.input-area input:focus {
+  border: 1px solid transparent;
+}
+
+.input-area button {
+  all: unset;
+  display: inline;
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #a963ff;
+  text-transform: uppercase;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.input-area button:hover {
+  scale: 1.05 1.05;
+}
+
+.input-area button:disabled {
+  background-color: #666;
+  cursor: not-allowed;
+}
+
+.command-area {
+  padding: 0 20px;
+  font-family: monospace;
+  font-size: 18px;
+  background-color: #000;
+  display: grid;
+  grid-template-columns: 25px 1fr;
+  align-items: center;
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+  flex: 1;
+}
+
+.suggestion {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  color: #666;
+  pointer-events: none;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.command-area input {
+  all: unset;
+  margin: 0;
+  padding: 10px;
+  position: relative;
+  background-color: transparent;
+  z-index: 2;
+  display: inline-block;
+  width: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #1c1c1c;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #333;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

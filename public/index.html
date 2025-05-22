@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline';">
+  <title>V Rising RCON Client</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./ansi.css">
+  <base href="./" />
+  <script type="module" src="../src/renderer.js" defer></script>
+</head>
+
+<body>
+  <div class="output-area">
+    <div class="input-area">
+      <label for="host"><span>IP </span><input id="host" placeholder="127.0.0.1" /></label>
+      <label for="port"><span>PORT </span><input id="port" placeholder="25575" type="number" /></label>
+      <label for="password"><span>PASSWORD </span><input id="password" placeholder="•••••" type="password" /></label>
+      <button id="connect">Connect</button>
+    </div>
+    <pre id="output"></pre>
+  </div>
+  <div class="command-area">
+    &gt; <div class="input-container">
+      <input id="command" placeholder="Please connect to a server" spellcheck="false" disabled />
+      <span id="suggestion" class="suggestion"></span>
+    </div>
+  </div>
+</body>
+
+</html>
