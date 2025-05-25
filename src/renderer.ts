@@ -237,6 +237,7 @@ async function getAvailableCommands(): Promise<Command[]> {
   const lines = commandListResponse.split('\n').filter(line => line.trim() !== '');
 
   for (const line of lines) {
+    if (!line.startsWith('-')) continue;
     const colonIndex = line.indexOf(':');
     const name = line.substring(2, colonIndex).trim();
     const rest = line.substring(colonIndex + 1).trim();
